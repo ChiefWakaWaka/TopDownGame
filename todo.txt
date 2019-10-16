@@ -1,0 +1,20 @@
+Mini-map:
+ - fix speed and player render on mini-map
+ - shift mini-map into the top left corner
+
+Enemies:
+ - add more enemies
+ - add enemy damage
+ - fix player tracking
+
+Rooms:
+ - add room difficulties
+ - lock rooms on entry
+
+Gameplay:
+ - add health and win/lose conditions
+ - add weapons
+
+Quality of Life:
+ - add title screen
+ - add sound?
