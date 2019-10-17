@@ -46,7 +46,7 @@ for i in range(len(maparray) * len(maparray[0])):
         mapSearchX = 0
 
 entityGroup = []
-player = Character(25, camPosX, camPosY)
+player = Character(5, camPosX, camPosY)
 entityGroup.append(player)
 mapSprites.append(player)
 
