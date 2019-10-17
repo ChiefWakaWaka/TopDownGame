@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 import os
+import sys
 from maprender import *
 from Chambers import *
 from character import Character
@@ -21,11 +22,12 @@ camPosX = display_width / 2
 camPosY = display_height / 2
 
 game_display = pygame.display.set_mode((display_width, display_height))
+pygame.mouse.set_visible(0)
 
 pygame.display.set_caption('Dungeon Crawler')
 clock=pygame.time.Clock()
 
-map = maprender()
+map = maprender(int(sys.argv[1]))
 maparray = map.createMap()
 #print(maparray)
 mapSprites = []
@@ -46,7 +48,7 @@ for i in range(len(maparray) * len(maparray[0])):
         mapSearchX = 0
 
 entityGroup = []
-player = Character(5, camPosX, camPosY)
+player = Character(25, camPosX, camPosY)
 entityGroup.append(player)
 mapSprites.append(player)
 
@@ -104,6 +106,7 @@ def EnemyDraw():
         obj.drawEntity(game_display, camPosX, camPosY)
         obj.move()
 
+i=0
 while True:
     event_handler()
     keybinds()
@@ -111,6 +114,7 @@ while True:
     EntityDraw()
     EnemyDraw()
     DrawMap()
-    #Mouse_x, Mouse_y = pygame.mouse.get_pos()
+    player.collisionDetect(mapSprites)
     pygame.display.update()
     clock.tick(60)
+    i+=1

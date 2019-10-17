@@ -16,7 +16,7 @@ class Zombie:
         self.player = player
 
     def drawEntity(self, game_display, camPosX, camPosY):
-        pygame.draw.rect(game_display, GREEN, [self.xPos+camPosX-55, self.yPos+camPosY-91, 10, 10])
+        pygame.draw.rect(game_display, GREEN, [self.xPos+camPosX-55, self.yPos+camPosY-91, 5, 5])
 
     def move(self):
         i = 2
