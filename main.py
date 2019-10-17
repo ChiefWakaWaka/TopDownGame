@@ -51,8 +51,8 @@ entityGroup.append(player)
 mapSprites.append(player)
 
 enemyGroup = []
-for i in range(1):
-    enemyGroup.append(Zombie(10, camPosX, camPosY))
+for i in range(50):
+    enemyGroup.append(Zombie(10, camPosX, camPosY, player))
 
 def event_handler():
     for event in pygame.event.get():
@@ -82,7 +82,8 @@ def keybinds():
         player.xPos += player.movespeed
     if keys[pygame.K_r]:
         os.exec*()
-    print(player.xPos, player.yPos)
+#    print(player.xPos, player.yPos)
+    #print(enemyGroup[0].xPos,enemyGroup[0].yPos)
 
 def BGDraw():
     game_display.fill(BLACK)
@@ -101,7 +102,7 @@ def DrawMap():
 def EnemyDraw():
     for obj in enemyGroup:
         obj.drawEntity(game_display, camPosX, camPosY)
-        obj.move(player.xPos, player.yPos)
+        obj.move()
 
 while True:
     event_handler()
