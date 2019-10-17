@@ -3,7 +3,7 @@ import random
 
 class maprender:
     def __init__(self):
-        self.roomCnt = 3 #Locked for now
+        self.roomCnt = 20 #Locked for now
 
     def createMap(self):
         roomCnt = self.roomCnt
@@ -43,10 +43,10 @@ class maprender:
             map = np.delete(map, 0, axis = 0)
             map = np.delete(map, 0, axis = 1)
 
-        while np.sum(map, axis=0)[0] == len(map[0]):
-            map = np.delete(map, 0, axis = 0)
+        #while np.sum(map, axis=0)[0] == len(map[0]):
+        #    map = np.delete(map, 0, axis = 0)
 
-        while np.sum(map, axis=1)[0] == len(map):
-            map = np.delete(map, 0, axis = 1)
+        #while np.sum(map, axis=1)[0] == len(map):
+        #    map = np.delete(map, 0, axis = 1)
 
         return map

@@ -51,7 +51,7 @@ entityGroup.append(player)
 mapSprites.append(player)
 
 enemyGroup = []
-for i in range(50):
+for i in range(500):
     enemyGroup.append(Zombie(10, camPosX, camPosY, player))
 
 def event_handler():

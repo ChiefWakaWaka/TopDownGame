@@ -7,7 +7,7 @@ GREEN = (38, 122, 44)
 class Zombie:
     def __init__(self, health, camPosX, camPosY, player):
         self.moveSpeed = 0.01
-        self.senseRange = 5000
+        self.senseRange = 500
         self.health = health
         self.xPos = camPosX + random.randint(-1000,1000)
         self.yPos = camPosY + random.randint(-1000,1000)
