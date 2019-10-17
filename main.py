@@ -52,7 +52,7 @@ mapSprites.append(player)
 
 enemyGroup = []
 for i in range(1):
-    enemyGroup.append(Zombie(10, camPosX, camPosY))
+    enemyGroup.append(Zombie(10, camPosX, camPosY, player))
 
 def event_handler():
     for event in pygame.event.get():
@@ -101,7 +101,7 @@ def DrawMap():
 def EnemyDraw():
     for obj in enemyGroup:
         obj.drawEntity(game_display, camPosX, camPosY)
-        obj.move(player.xPos, player.yPos)
+        obj.move()
 
 while True:
     event_handler()
